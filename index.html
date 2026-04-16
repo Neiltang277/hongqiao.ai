@@ -7,11 +7,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary-dark: #1a0a0a;
-            --primary-red: #8B0000;
-            --accent-red: #B22222;
-            --bright-red: #DC143C;
-            --glow-red: #FF4444;
+            --primary-dark: #0a1a12;
+            --primary-green: #00D794;
+            --accent-green: #00B380;
+            --bright-green: #00E6A8;
+            --glow-green: #00FFB2;
             --text-light: #f5f5f5;
             --text-gray: #a0a0a0;
         }
@@ -48,9 +48,9 @@
             right: 0;
             bottom: 0;
             background: 
-                radial-gradient(ellipse at 20% 80%, rgba(139, 0, 0, 0.15) 0%, transparent 50%),
-                radial-gradient(ellipse at 80% 20%, rgba(178, 34, 34, 0.1) 0%, transparent 50%),
-                radial-gradient(ellipse at 50% 50%, rgba(220, 20, 60, 0.05) 0%, transparent 70%);
+                radial-gradient(ellipse at 20% 80%, rgba(0, 179, 128, 0.15) 0%, transparent 50%),
+                radial-gradient(ellipse at 80% 20%, rgba(0, 230, 168, 0.1) 0%, transparent 50%),
+                radial-gradient(ellipse at 50% 50%, rgba(0, 215, 148, 0.05) 0%, transparent 70%);
         }
 
         .grid-lines {
@@ -60,8 +60,8 @@
             right: 0;
             bottom: 0;
             background-image: 
-                linear-gradient(rgba(139, 0, 0, 0.03) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(139, 0, 0, 0.03) 1px, transparent 1px);
+                linear-gradient(rgba(0, 179, 128, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 179, 128, 0.03) 1px, transparent 1px);
             background-size: 50px 50px;
             animation: gridMove 20s linear infinite;
         }
@@ -77,9 +77,9 @@
             left: 0;
             right: 0;
             z-index: 1000;
-            background: rgba(26, 10, 10, 0.9);
+            background: rgba(10, 26, 18, 0.9);
             backdrop-filter: blur(20px);
-            border-bottom: 1px solid rgba(139, 0, 0, 0.3);
+            border-bottom: 1px solid rgba(0, 215, 148, 0.3);
         }
 
         .nav-container {
@@ -96,10 +96,10 @@
             font-family: 'Orbitron', sans-serif;
             font-size: 28px;
             font-weight: 800;
-            color: var(--bright-red);
+            color: var(--bright-green);
             text-decoration: none;
             letter-spacing: 3px;
-            text-shadow: 0 0 20px rgba(220, 20, 60, 0.5);
+            text-shadow: 0 0 20px rgba(0, 230, 168, 0.5);
         }
 
         .logo span {
@@ -129,9 +129,9 @@
             left: 0;
             width: 0;
             height: 2px;
-            background: var(--bright-red);
+            background: var(--bright-green);
             transition: width 0.3s ease;
-            box-shadow: 0 0 10px var(--bright-red);
+            box-shadow: 0 0 10px var(--bright-green);
         }
 
         .nav-links a:hover::after {
@@ -139,7 +139,7 @@
         }
 
         .nav-links a:hover {
-            color: var(--bright-red);
+            color: var(--bright-green);
         }
 
         .hero {
@@ -149,6 +149,19 @@
             justify-content: center;
             position: relative;
             padding: 120px 40px 80px;
+            background: url('images/hero-bg.png') no-repeat center center;
+            background-size: cover;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(10, 26, 18, 0.7);
+            z-index: 0;
         }
 
         .hero-content {
@@ -160,19 +173,19 @@
         .hero-badge {
             display: inline-block;
             padding: 8px 20px;
-            background: rgba(139, 0, 0, 0.2);
-            border: 1px solid var(--primary-red);
+            background: rgba(0, 179, 128, 0.2);
+            border: 1px solid var(--primary-green);
             border-radius: 30px;
             font-size: 12px;
             letter-spacing: 2px;
-            color: var(--bright-red);
+            color: var(--bright-green);
             margin-bottom: 30px;
             animation: pulse 2s ease-in-out infinite;
         }
 
         @keyframes pulse {
-            0%, 100% { box-shadow: 0 0 0 0 rgba(220, 20, 60, 0.4); }
-            50% { box-shadow: 0 0 0 15px rgba(220, 20, 60, 0); }
+            0%, 100% { box-shadow: 0 0 0 0 rgba(0, 230, 168, 0.4); }
+            50% { box-shadow: 0 0 0 15px rgba(0, 230, 168, 0); }
         }
 
         .hero h1 {
@@ -181,7 +194,7 @@
             font-weight: 900;
             line-height: 1.1;
             margin-bottom: 30px;
-            background: linear-gradient(135deg, var(--text-light) 0%, var(--bright-red) 50%, var(--accent-red) 100%);
+            background: linear-gradient(135deg, var(--text-light) 0%, var(--bright-green) 50%, var(--accent-green) 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -210,8 +223,8 @@
             font-family: 'Orbitron', sans-serif;
             font-size: 48px;
             font-weight: 700;
-            color: var(--bright-red);
-            text-shadow: 0 0 30px rgba(220, 20, 60, 0.5);
+            color: var(--bright-green);
+            text-shadow: 0 0 30px rgba(0, 230, 168, 0.5);
         }
 
         .stat-label {
@@ -255,9 +268,9 @@
         .title-line {
             width: 60px;
             height: 3px;
-            background: var(--bright-red);
+            background: var(--bright-green);
             margin: 20px auto;
-            box-shadow: 0 0 20px var(--bright-red);
+            box-shadow: 0 0 20px var(--bright-green);
         }
 
         .features-grid {
@@ -267,8 +280,8 @@
         }
 
         .feature-card {
-            background: rgba(139, 0, 0, 0.1);
-            border: 1px solid rgba(139, 0, 0, 0.3);
+            background: rgba(0, 179, 128, 0.1);
+            border: 1px solid rgba(0, 179, 128, 0.3);
             padding: 40px 30px;
             border-radius: 10px;
             transition: all 0.4s ease;
@@ -283,7 +296,7 @@
             left: 0;
             right: 0;
             height: 3px;
-            background: linear-gradient(90deg, transparent, var(--bright-red), transparent);
+            background: linear-gradient(90deg, transparent, var(--bright-green), transparent);
             transform: scaleX(0);
             transition: transform 0.4s ease;
         }
@@ -294,8 +307,8 @@
 
         .feature-card:hover {
             transform: translateY(-10px);
-            border-color: var(--bright-red);
-            box-shadow: 0 20px 40px rgba(139, 0, 0, 0.3);
+            border-color: var(--bright-green);
+            box-shadow: 0 20px 40px rgba(0, 179, 128, 0.3);
         }
 
         .feature-icon {
@@ -304,7 +317,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            background: linear-gradient(135deg, var(--primary-red), var(--accent-red));
+            background: linear-gradient(135deg, var(--primary-green), var(--accent-green));
             border-radius: 10px;
             margin-bottom: 25px;
             font-size: 24px;
@@ -323,7 +336,7 @@
         }
 
         .about-section {
-            background: rgba(139, 0, 0, 0.05);
+            background: rgba(0, 179, 128, 0.05);
             position: relative;
         }
 
@@ -357,15 +370,15 @@
         .about-stat {
             text-align: center;
             padding: 30px;
-            background: rgba(26, 10, 10, 0.5);
-            border: 1px solid rgba(139, 0, 0, 0.2);
+            background: rgba(10, 26, 18, 0.5);
+            border: 1px solid rgba(0, 179, 128, 0.2);
             border-radius: 10px;
         }
 
         .about-stat-number {
             font-family: 'Orbitron', sans-serif;
             font-size: 36px;
-            color: var(--bright-red);
+            color: var(--bright-green);
             font-weight: 700;
         }
 
@@ -386,8 +399,8 @@
         }
 
         .service-card {
-            background: linear-gradient(180deg, rgba(139, 0, 0, 0.15) 0%, rgba(26, 10, 10, 0.8) 100%);
-            border: 1px solid rgba(139, 0, 0, 0.2);
+            background: linear-gradient(180deg, rgba(0, 179, 128, 0.15) 0%, rgba(10, 26, 18, 0.8) 100%);
+            border: 1px solid rgba(0, 179, 128, 0.2);
             padding: 35px 25px;
             border-radius: 10px;
             text-align: center;
@@ -395,9 +408,9 @@
         }
 
         .service-card:hover {
-            border-color: var(--bright-red);
+            border-color: var(--bright-green);
             transform: translateY(-5px);
-            box-shadow: 0 15px 30px rgba(139, 0, 0, 0.2);
+            box-shadow: 0 15px 30px rgba(0, 179, 128, 0.2);
         }
 
         .service-icon {
@@ -431,7 +444,7 @@
             transform: translate(-50%, -50%);
             width: 600px;
             height: 600px;
-            background: radial-gradient(circle, rgba(139, 0, 0, 0.2) 0%, transparent 70%);
+            background: radial-gradient(circle, rgba(0, 179, 128, 0.2) 0%, transparent 70%);
             pointer-events: none;
         }
 
@@ -459,7 +472,7 @@
         .cta-button {
             display: inline-block;
             padding: 18px 50px;
-            background: linear-gradient(135deg, var(--primary-red), var(--bright-red));
+            background: linear-gradient(135deg, var(--primary-green), var(--bright-green));
             color: var(--text-light);
             text-decoration: none;
             font-size: 14px;
@@ -490,13 +503,13 @@
 
         .cta-button:hover {
             transform: translateY(-3px);
-            box-shadow: 0 15px 40px rgba(220, 20, 60, 0.4);
+            box-shadow: 0 15px 40px rgba(0, 230, 168, 0.4);
         }
 
         footer {
-            background: rgba(26, 10, 10, 0.95);
+            background: rgba(10, 26, 18, 0.95);
             padding: 60px 40px 30px;
-            border-top: 1px solid rgba(139, 0, 0, 0.3);
+            border-top: 1px solid rgba(0, 215, 148, 0.3);
         }
 
         .footer-content {
@@ -544,13 +557,13 @@
         }
 
         .footer-column a:hover {
-            color: var(--bright-red);
+            color: var(--bright-green);
         }
 
         .footer-bottom {
             text-align: center;
             padding-top: 30px;
-            border-top: 1px solid rgba(139, 0, 0, 0.2);
+            border-top: 1px solid rgba(0, 179, 128, 0.2);
         }
 
         .footer-bottom p {
@@ -570,7 +583,7 @@
 
         .shape {
             position: absolute;
-            border: 1px solid rgba(139, 0, 0, 0.3);
+            border: 1px solid rgba(0, 179, 128, 0.3);
             animation: float 15s ease-in-out infinite;
         }
 
@@ -666,8 +679,8 @@
             display: block;
             width: 20px;
             height: 20px;
-            border-right: 2px solid var(--bright-red);
-            border-bottom: 2px solid var(--bright-red);
+            border-right: 2px solid var(--bright-green);
+            border-bottom: 2px solid var(--bright-green);
             transform: rotate(45deg);
             opacity: 0.5;
         }
@@ -698,26 +711,26 @@
 
     <section class="hero" id="home">
         <div class="hero-content">
-            <div class="hero-badge">人工智能创新生态社区</div>
+            <div class="hero-badge">聚焦 AI Agent 与具身智能的产业孵化生态平台</div>
             <h1>虹桥智域</h1>
             <p class="hero-subtitle">
-                打造全球最大的人工智能孵化器<br>
-                汇聚顶尖AI企业 · 构建完整产业生态 · 赋能千行百业
+                聚“申”智能  |  打造全球人工智能产业高地<br>
+                聚焦前沿技术场景落地 · 打造全链条产业孵化生态 · 链接国际化资源
             </p>
             <a href="#contact" class="cta-button">加入我们</a>
-            <div class="hero-stats">
+            <!-- <div class="hero-stats">
                 <div class="stat-item">
-                    <div class="stat-number">10万+</div>
+                    <div class="stat-number">10000+</div>
                     <div class="stat-label">产业空间(平方米)</div>
                 </div>
                 <div class="stat-item">
-                    <div class="stat-number">255</div>
+                    <div class="stat-number">30+</div>
                     <div class="stat-label">入驻企业</div>
                 </div>
                 <div class="stat-item">
-                    <div class="stat-number">34</div>
+                    <div class="stat-number"></div>
                     <div class="stat-label">备案大模型</div>
-                </div>
+                </div> -->
             </div>
         </div>
         <div class="scroll-indicator">
@@ -735,27 +748,12 @@
             <div class="about-content">
                 <div class="about-text">
                     <h2>关于虹桥智域</h2>
-                    <p>虹桥智域是全国首个AI大模型创新生态社区，位于上海虹桥商务区，承载着打造"全球最大人工智能孵化器"的宏伟目标。</p>
+                    <p>虹桥智域不仅是一个孵化器，更是中国AI企业走向世界的"始发港"。</p>
+                    <p>位于上海虹桥商务区，承载着打造"全球最大人工智能孵化器"的宏伟目标，是上海打造具有全球影响力的科技创新中心的关键落子。</p>
                     <p>自2023年成立以来，虹桥智域已快速集聚超百家创新企业，覆盖从算力芯片、基础模型到工业、医疗、金融等各个垂直领域的完整产业链条。</p>
-                    <p>我们秉承"开放闭环"的理念，构建"大院大所+顶尖企业+超级平台"的多维创新势能，为创业者提供全方位支持。</p>
                 </div>
-                <div class="about-stats">
-                    <div class="about-stat">
-                        <div class="about-stat-number">100+</div>
-                        <div class="about-stat-label">入驻企业</div>
-                    </div>
-                    <div class="about-stat">
-                        <div class="about-stat-number">10亿+</div>
-                        <div class="about-stat-label">企业总营收</div>
-                    </div>
-                    <div class="about-stat">
-                        <div class="about-stat-number">500+</div>
-                        <div class="about-stat-label">运营团队</div>
-                    </div>
-                    <div class="about-stat">
-                        <div class="about-stat-number">90%</div>
-                        <div class="about-stat-label">头部企业占比</div>
-                    </div>
+                <div class="about-image">
+                    <img src="images/about.png" alt="关于虹桥智域" style="width: 100%; height: auto; border-radius: 10px;">
                 </div>
             </div>
         </div>
@@ -859,7 +857,7 @@
         <div class="cta-content">
             <h2>加入虹桥智域</h2>
             <p>与最优秀的AI创业者同行，共创人工智能产业未来</p>
-            <a href="mailto:contact@hongqiao-zhiyu.com" class="cta-button">立即咨询</a>
+            <a href="mailto:contact@hongqiao.ai" class="cta-button">立即咨询</a>
         </div>
     </section>
 
@@ -867,7 +865,7 @@
         <div class="footer-content">
             <div class="footer-brand">
                 <a href="#" class="logo">虹桥<span>智域</span></a>
-                <p>全国首个AI大模型创新生态社区，致力于打造全球最大的人工智能孵化器</p>
+                <p>“技术在长宁，场景在全球”</p>
             </div>
             <div class="footer-column">
                 <h4>快速链接</h4>
@@ -881,23 +879,23 @@
             <div class="footer-column">
                 <h4>入驻企业</h4>
                 <ul>
-                    <li><a href="#">无问芯穹</a></li>
+                    <!-- <li><a href="#">无问芯穹</a></li>
                     <li><a href="#">LiblibAI</a></li>
                     <li><a href="#">财跃星辰</a></li>
-                    <li><a href="#">书生通用</a></li>
+                    <li><a href="#">书生通用</a></li> -->
                 </ul>
             </div>
             <div class="footer-column">
                 <h4>联系我们</h4>
                 <ul>
-                    <li><a href="#">地址：上海虹桥商务区</a></li>
-                    <li><a href="#">电话：400-XXX-XXXX</a></li>
-                    <li><a href="#">邮箱：contact@hongqiao-zhiyu.com</a></li>
+                    <li><a href="#">地址：上海市长宁区通协路399号虹桥上城8幢</a></li>
+                    <li><a href="#">电话：159214534632</a></li>
+                    <li><a href="#">邮箱：contact@hongqiao.ai</a></li>
                 </ul>
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2024 虹桥智域. All Rights Reserved.</p>
+            <p>&copy; 2026 虹桥智域. All Rights Reserved.</p>
         </div>
     </footer>
 
@@ -905,9 +903,9 @@
         window.addEventListener('scroll', function() {
             const header = document.querySelector('header');
             if (window.scrollY > 100) {
-                header.style.background = 'rgba(26, 10, 10, 0.98)';
+                header.style.background = 'rgba(10, 26, 18, 0.98)';
             } else {
-                header.style.background = 'rgba(26, 10, 10, 0.9)';
+                header.style.background = 'rgba(10, 26, 18, 0.9)';
             }
         });
 
